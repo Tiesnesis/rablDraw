@@ -39,8 +39,19 @@ public class Client
                 streamWriter.Flush();
                 while (str != "exit")
                 {
-                    Console.WriteLine(streamReader.ReadLine());
-                    Console.WriteLine("type:");
+                    string message = streamReader.ReadLine();
+                    Console.WriteLine(message);
+                    if (message.Contains("Tev"))
+                    {
+                        streamWriter.WriteLine("######" + str + "######Zimejums");
+                        streamWriter.Flush();
+                    }
+                    else
+                    {
+                        streamWriter.WriteLine("######" + str + "######Minejums");
+                        streamWriter.Flush();
+                    }
+
                 }
                 if (str == "exit")
                 {

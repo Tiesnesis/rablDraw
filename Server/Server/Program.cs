@@ -8,6 +8,7 @@ public class User
 {
     static TcpListener tcpListener = new TcpListener(10);
     public string message = "";
+    public string answer = "";
     public string name = "";
     public bool isConnected = false;
 
@@ -33,6 +34,7 @@ public class User
             {
                 streamWriter.WriteLine(message);
                 streamWriter.Flush();
+                answer = streamReader.ReadLine();
                 Thread.Sleep(1000);
             }
             streamReader.Close();
@@ -72,9 +74,13 @@ public class User
             {
                 counter = 0;
                 Console.WriteLine("userCounter: " + userCounter);
+                foreach (User user in users)
+                {
+                    Console.WriteLine(user.name + " : " + user.answer);
+
+                }
                 userCounter++;
             }
-
 
             if (userCounter == users.Count)
             {
@@ -88,7 +94,7 @@ public class User
                 }
                 else
                 {
-                    user.message = "Tagad zime " + users[userCounter].name;
+                    user.message = "Tagad zime " + users[userCounter].name + ", kas ir uzzimejis: " + users[userCounter].answer;
                 }
 
             }
