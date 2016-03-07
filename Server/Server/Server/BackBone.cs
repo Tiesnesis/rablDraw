@@ -1,27 +1,23 @@
 ﻿using System;
-using System.Net.Sockets;
 using System.Threading;
-using System.Collections;
 using System.Collections.Generic;
-using Server;
 
 namespace Server
 {
     class BackBone
     {
-
         int userCounter = 0;
         List<User> users = new List<User>();
         int numberOfClientsYouNeedToConnect;
 
-        public int NumberOfClientsYouNeedToConnect {
+        public int NumberOfClientsYouNeedToConnect
+        {
             get { return numberOfClientsYouNeedToConnect; }
             set { numberOfClientsYouNeedToConnect = value; }
         }
 
         public void PlayGame()
         {
-            //TcpListener tcpListener = new TcpListener(10);
             User.startListener();
 
 
@@ -44,10 +40,10 @@ namespace Server
                 if (counter > 20000000)
                 {
                     counter = 0;
-                    Console.WriteLine("userCounter: " + userCounter);
+                   // ((MainWindow)System.Windows.Application.Current.MainWindow).addLog("userCounter: " + userCounter);
                     foreach (User user in users)
                     {
-                        Console.WriteLine(user.Name + " : " + user.Answer);
+                        //Console.WriteLine(user.Name + " : " + user.Answer);
 
                     }
                     userCounter++;

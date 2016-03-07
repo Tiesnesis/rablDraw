@@ -37,9 +37,9 @@ namespace Server
             this.message = message;
         }
 
-       public void Listeners()
+        public void Listeners()
         {
-            
+
             if (socketForClient.Connected)
             {
                 Console.WriteLine("Client:" + socketForClient.RemoteEndPoint + " now connected to server.");
@@ -62,7 +62,7 @@ namespace Server
                 networkStream.Close();
                 streamWriter.Close();
 
-            }            
+            }
 
         }
 
