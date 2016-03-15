@@ -43,7 +43,7 @@ namespace Server
                    // ((MainWindow)System.Windows.Application.Current.MainWindow).addLog("userCounter: " + userCounter);
                     foreach (User user in users)
                     {
-                        //Console.WriteLine(user.Name + " : " + user.Answer);
+                        Console.WriteLine(user.Name + " : " + user.Answer);
 
                     }
                     userCounter++;
